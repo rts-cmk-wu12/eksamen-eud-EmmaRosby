@@ -1,0 +1,33 @@
+@use "../../public/font/fonts";
+@use "../variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: inherit;
+  scroll-behavior: smooth;
+  list-style: none;
+  font-family: fonts.$font-inter;
+  background-color: variables.$bg-color-white;
+}
+
+img {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  margin-inline: 2rem;
+
+   min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+h1 {
+  display: none;
+}
