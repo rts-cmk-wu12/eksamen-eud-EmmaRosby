@@ -1,6 +1,6 @@
-import Footer from "./components/footer";
-import Header from "./components/header";
-import Listing from "./components/listings";
+import Footer from "./components/ui/footer";
+import Header from "./components/ui/header";
+import Listing from "./components/ui/listings";
 
 
 export default async function Home() {

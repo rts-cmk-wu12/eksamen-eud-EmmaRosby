@@ -36,8 +36,8 @@ Et CSS værktøj, som gør det muligt at bruge variabler, mixins og nesting i mi
 * **API SwapHub**  
 Et eksternt API, som jeg henter data fra, .........................
 
-<!-- * **Zod**  
-Et valideringsbibliotek til JavaScript, som jeg bruger til at validere brugerinput i formularer, fx ved login. -->
+* **Zod**  
+Et valideringsbibliotek til JavaScript, som jeg bruger til at validere brugerinput i formularer, fx ved login.
 
 Ændringer på design:
 - Ændrede baggrundsfarve på siden så den ikke er så hvid, så det er nemmere at kigge på.

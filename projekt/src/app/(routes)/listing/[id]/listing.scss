@@ -1,0 +1,36 @@
+@use "../../../../variables";
+
+.item{
+    display: flex;
+    gap: 1rem;
+    padding: 2rem;
+
+    &__wrapper{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        overflow: hidden;
+        aspect-ratio: 1/1;
+        
+        &__img{
+            height: 100%;
+            width: auto;
+            
+        }
+    }
+
+    &__info{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        &__request{
+            width: fit-content;
+            padding: .3rem;
+            border-radius: .5rem;
+            background-color: variables.$bg-color-gray;
+            border: solid 2px variables.$border-color-dark-gray;
+        }
+
+    }
+}

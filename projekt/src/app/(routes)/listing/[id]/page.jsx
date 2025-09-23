@@ -1,6 +1,8 @@
-import Footer from "@/app/components/footer";
-import Header from "@/app/components/header";
+import Header from "@/app/components/ui/header";
+import Footer from "@/app/components/ui/footer";
 import Image from "next/image";
+import "./listing.scss";
+import OtherItems from "@/app/components/ui/other-items";
 
 async function ListingDetailPage({ params }) {
     const { id } = await params;
@@ -9,25 +11,32 @@ async function ListingDetailPage({ params }) {
 
     console.log(item);
 
+    const listingDate = item.asset.createdAt.slice(0, 10);
 
     return (
         <>
         <Header />
-        <article>
-            <Image
-                src={item.asset.url}
-                alt={item.title}
-                width={100}
-                height={100}
-                className="listing-card__wrapper__img"
-            />
-            <div>
-                <h2>{item.title}</h2>
-                <p>{item.description}</p>
-                <span>On SwapHun since: {item.asset.createdAt}</span>
-                <button>Propose a swap</button>
-            </div>
-        </article>
+        <main>
+            <article className="item">
+                <div className="item__wrapper">
+                    <Image
+                        src={item.asset.url}
+                        alt={item.title}
+                        width={100}
+                        height={100}
+                        className="item__wrapper__img"
+                    />
+                </div>
+                <div className="item__info">
+                    <h2>{item.title}</h2>
+                    <p>{item.description}</p>
+                    <span>On SwapHun since: {listingDate}</span>
+                    <button className="item__info__request">Propose a swap</button>
+                </div>
+            </article>
+
+            <OtherItems />
+        </main>
         <Footer />
         </>
     );
