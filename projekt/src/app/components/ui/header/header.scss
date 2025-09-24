@@ -31,4 +31,9 @@
             color: variables.$font-color-white;
         }
     }
+
+    &__active{
+       border: solid red; 
+    }
 }
+

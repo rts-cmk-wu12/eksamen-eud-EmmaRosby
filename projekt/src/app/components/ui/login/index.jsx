@@ -1,15 +1,16 @@
 "use client";
 import Link from "next/link";
-import { useActionState, useEffect, useState } from "react";
+import { useActionState, useEffect } from "react";
 import doLogin from "./do-login";
 import { toast, ToastContainer } from "react-toastify";
-import { redirect } from "next/dist/server/api-utils";
 import "./login.scss";
+import { redirect } from "next/dist/server/api-utils";
 
 function LoginForm() {
 
     const [formState, formAction, pending] = useActionState(doLogin);
-
+    console.log(formState);
+    
     //Toast Loading
     useEffect(function(){
         const id = pending ? toast.loading("Signing in...", {
@@ -23,10 +24,10 @@ function LoginForm() {
         if (!id) {
             toast.success("Welcome", {
                 onClose: function(){
-                    redirect("/profile")
+                    // redirect("/")
                 },
                 closeOnClick: false,
-                autoClose: 3000,
+                autoClose: 2000,
                 hideProgressBar: true,
                 position: "top-right",
                 theme: "dark"
@@ -41,15 +42,17 @@ function LoginForm() {
                 <label className="login__data">
                     <span>Email</span>
                     <input type="text" name="email" className="login__data__input" defaultValue={formState?.data?.email}/>
-                    <span>{formState?.properties?.email?.errors}</span>
+                    <span className="login__data__error">{formState?.properties?.email?.errors}</span>
                 </label>
                 <label className="login__data">
                     <span>Password</span>
                     <input type="password" name="password" className="login__data__input" defaultValue={formState?.data?.password}/>
-                    <span>{formState?.properties?.password?.errors}</span>
+                    <span className="login__data__error">{formState?.properties?.password?.errors}</span>
                 </label>
-                <button type="submit" className="">Sign in</button>
-                <Link href="/">Forgot password?</Link>
+                <button type="submit" className="login__btn">Sign in</button>
+                <Link href="#" className="login__link">Forgot password?</Link>
+                <p>Dont have an account? Register <Link href="/register" className="login__link">here.</Link></p>
+                
                  <ToastContainer />
             </form>
         </>

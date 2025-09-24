@@ -41,7 +41,7 @@ async function doLogin(prevState, formData) {
 
     if (!response.ok) return {
         success: false,
-        errors: ["Forkert brugernavn eller password"],
+        errors: ["Forkert email eller password"],
         data: {
             email,
             password
