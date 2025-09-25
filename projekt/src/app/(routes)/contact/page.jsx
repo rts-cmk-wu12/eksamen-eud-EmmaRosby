@@ -1,6 +1,6 @@
-import ContactForm from "@/app/components/ui/contact";
-import Footer from "@/app/components/ui/footer";
-import Header from "@/app/components/ui/header";
+import ContactForm from "@/components/ui/contact";
+import Footer from "@/components/ui/footer";
+import Header from "@/components/ui/header";
 
 function ContactPage() {
     return (  

@@ -24,13 +24,7 @@
         flex-direction: column;
         gap: 2rem;
 
-        &__request{
-            width: fit-content;
-            padding: .3rem;
-            border-radius: .5rem;
-            background-color: variables.$bg-color-gray;
-            border: solid 2px variables.$border-color-dark-gray;
-        }
+       
 
     }
 }

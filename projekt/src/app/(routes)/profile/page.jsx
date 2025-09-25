@@ -1,6 +1,6 @@
-import Footer from "@/app/components/ui/footer";
-import Header from "@/app/components/ui/header";
-import ProfileInfo from "@/app/components/ui/profile-info";
+import Footer from "@/components/ui/footer";
+import Header from "@/components/ui/header";
+import ProfileInfo from "@/components/ui/profile-info";
 
 
 function ProfilePage() {

@@ -1,38 +1,39 @@
-@use "../../../../variables";
-.contact{
+@use "../../../variables";
+
+.login{
     display: flex;
     flex-direction: column;
+    border: solid variables.$border-color-gray;
+    border-radius: .7rem;
+    padding: 1rem;
+    width: 350px;
+    margin: 0 auto;
     margin-top: 2rem;
     gap: 1rem;
-    &__wrap{
+
+    &__data {
         display: flex;
         flex-direction: column;
         gap: .5rem;
+
         &__input{
             border:  solid variables.$border-color-gray;
             padding: .5rem;
             border-radius: .5rem;
         }
-        &__message{
-            height: 6lh;
+        &__error{
+            color: red;
         }
     }
-    &__submit{
+
+    &__btn{
         padding: .5rem;
         font-size: 1.2rem;
         color: variables.$font-color-white;
         background-color: variables.$bg-color-black;
         border-radius: .5rem;
     }
-}
-.wrapper{
-    display: flex;
-    flex-direction: column;
-    border: solid variables.$border-color-gray;
-    width: 350px;
-    border-radius: .7rem;
-    padding: 1rem;
-    margin: 0 auto;
-    gap: 1rem;
-    margin-block: 2rem;
+    &__link{
+        text-decoration: underline;
+    }
 }

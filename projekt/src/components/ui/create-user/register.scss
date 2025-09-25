@@ -1,6 +1,6 @@
-@use "../../../../variables";
+@use "../../../variables";
 
-.login{
+.register{
     display: flex;
     flex-direction: column;
     border: solid variables.$border-color-gray;
@@ -21,9 +21,6 @@
             padding: .5rem;
             border-radius: .5rem;
         }
-        &__error{
-            color: red;
-        }
     }
 
     &__btn{
@@ -33,7 +30,5 @@
         background-color: variables.$bg-color-black;
         border-radius: .5rem;
     }
-    &__link{
-        text-decoration: underline;
-    }
+
 }

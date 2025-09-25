@@ -1,7 +1,7 @@
 # SwapHub
 Emma Rosby, WU12
 
-Valgfri opgave:
+Valgfri opgave: C Opret bruger
 
 # Sådan kommer du i gang  
 ### Kør SwapHub

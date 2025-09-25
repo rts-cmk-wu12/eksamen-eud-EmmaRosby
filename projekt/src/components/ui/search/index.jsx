@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
@@ -19,7 +19,7 @@ function SearchForm() {
             return;
         }
         setLoading(true);
-        fetch(`${process.env.API_BASE_URL}/listings`)
+        fetch(`http://localhost:4000/api/v1/listings`)
             .then(res => res.json())
             .then(data => {
                 if (!isMounted) return;

@@ -1,6 +1,6 @@
-import CreateUserForm from "@/app/components/ui/create-user";
-import Footer from "@/app/components/ui/footer";
-import Header from "@/app/components/ui/header";
+import CreateUserForm from "@/components/ui/create-user";
+import Footer from "@/components/ui/footer";
+import Header from "@/components/ui/header";
 
 function RegisterPage() {
     return (

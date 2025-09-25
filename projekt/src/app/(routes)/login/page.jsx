@@ -1,6 +1,6 @@
-import LoginForm from "@/app/components/ui/login";
-import Footer from "@/app/components/ui/footer";
-import Header from "@/app/components/ui/header";
+import LoginForm from "@/components/ui/login";
+import Footer from "@/components/ui/footer";
+import Header from "@/components/ui/header";
 
 function LoginPage() {
     return (  
