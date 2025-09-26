@@ -31,8 +31,6 @@ async function doRegister(prevState, formData) {
         ...(z.treeifyError(validated.error))
     };
 
-    const cookieStore = await cookies();
-    const accessToken = cookieStore.get("http://localhost:4000/auth/token");
     const response = await fetch(`${process.env.API_BASE_URL}/users`, {
         headers: {
            "Content-Type": "application/json"

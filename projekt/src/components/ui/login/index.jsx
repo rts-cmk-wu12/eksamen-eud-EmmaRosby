@@ -9,7 +9,6 @@ import { redirect } from "next/dist/server/api-utils";
 function LoginForm() {
 
     const [formState, formAction, pending] = useActionState(doLogin);
-    console.log(formState);
     
     //Toast Loading
     useEffect(function(){

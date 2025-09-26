@@ -4,26 +4,21 @@ import { IoArrowBackOutline, IoArrowForward } from "react-icons/io5";
 import ListingCard from "../listing-card";
 import "./pagination.scss"
 
-function Pagination({ listings, itemsPerPage = 6 }) {
+function Pagination({ listings  }) {
     const [currentPage, setCurrentPage] = useState(1)
     
-    // Pagination calc
+    const itemsPerPage = 6
     const totalPages = Math.ceil(listings.length / itemsPerPage);
-    const startIndex = (currentPage - 1) * itemsPerPage;
+    const startIndex = (currentPage - 1);   
     const selectedListings = listings.slice(startIndex, startIndex + itemsPerPage);
     const pages = Array.from({length: totalPages}, (_, i) => i + 1);
-
+    
     const prev = () => {
-        setCurrentPage((page) => Math.max(page - 1, 1))
+        setCurrentPage((page) => page - 1, 1)
     }
     const next = () => {
-        setCurrentPage((page) => Math.min(page + 1, totalPages))
+        setCurrentPage((page) => page + 1, totalPages)
     }
-
-    const pageBtn = () => {
-        onPageChange(page)
-    }
-
 
     return (
         <>
@@ -46,7 +41,6 @@ function Pagination({ listings, itemsPerPage = 6 }) {
                 {pages.map((page) => (
                     <button
                         key={page}
-                        onClick={pageBtn}
                         className={`pagination__not-active ${currentPage === page ? "pagination__active" : ""}`}
                     >{page}</button>
                 ))}

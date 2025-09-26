@@ -1,11 +1,11 @@
 import Header from "@/components/ui/header";
 import Footer from "@/components/ui/footer";
 import OtherItems from "@/components/ui/other-items";
-import Image from "next/image";
-import "./listing.scss";
-import { cookies } from "next/headers";
-import Link from "next/link";
 import RequestSwapButton from "@/components/ui/request-swap";
+import Image from "next/image";
+import Link from "next/link";
+import { cookies } from "next/headers";
+import "./listing.scss";
 
 async function ListingDetailPage({ params }) {
     const { id } = await params;
@@ -19,19 +19,16 @@ async function ListingDetailPage({ params }) {
 
     const listingDate = item.asset.createdAt.slice(0, 10);
 /* ____________________________________________________________________________________ */
-
+if (!isLoggedIn){
     const myResponse = await fetch(`${process.env.API_BASE_URL}/listings`);
     const data = (await myResponse.json());    
-   
-    
-    const myUserId = cookieStore.get("id_userid")
-    
-    console.log(myUserId.value);
-    
-    const myMatches = data.filter(user => user.userId == myUserId.value);
-    //  console.log(myMatches);
-    console.log(myMatches);
 
+    const myUserId = cookieStore.get("id_userid")
+    //console.log(myUserId.value);
+    
+    var myMatches = data.filter(user => user.userId == myUserId.value);
+    //  console.log(myMatches);
+}
     return (
         <>
             <Header />
@@ -51,16 +48,16 @@ async function ListingDetailPage({ params }) {
                         <p>{item.description}</p>
                         <span>On SwapHun since: {listingDate}</span>
                         {isLoggedIn ? (
-                            <Link href="/login" className="item__info__request" >Sign in to Swap</Link>
+                                <Link href="/login" className="item__info__request" >
+                                    <button className="item__info__login">Sign in to Swap</button>
+                                </Link>
                         ) : (
-                            <RequestSwapButton myMatches={myMatches} item={item}/>
+                            <RequestSwapButton myMatches={myMatches} item={item} />
                         )}
                     </div>
                 </article>
                 <OtherItems item={item} />
             </main>
-
-{/*             */}
             <Footer />
         </>
     );
