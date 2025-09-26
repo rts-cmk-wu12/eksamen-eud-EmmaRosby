@@ -9,12 +9,9 @@ function ContactForm() {
     const [email, setEmail] = useState("");
     const [text, setText] = useState("");
 
-    /*  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; */
-
     return (
         <>
             <div className="wrapper">
-
                 <form className="contact">
                     <label htmlFor="email" className="contact__wrap">
                         <span>Email:</span>

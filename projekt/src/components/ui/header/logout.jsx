@@ -2,6 +2,7 @@
 import "./header.scss";
 
 // taget fra et tidligere project
+
 function LogOutButton() {
 
     const handleLogout = () => {
@@ -11,7 +12,9 @@ function LogOutButton() {
     };
     return (
         <>
-            <button className="header__list__gap" onClick={handleLogout}>Log out</button>
+            <li>
+                <button className="header__list__gap" onClick={handleLogout}>Log out</button>
+            </li>
         </>
     );
 }

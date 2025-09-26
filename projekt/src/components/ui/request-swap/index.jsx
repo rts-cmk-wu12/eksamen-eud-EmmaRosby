@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import "./request-swap.scss"
-
 import { useReducer } from "react";
 
 function reducer(state, action) {
@@ -27,11 +26,9 @@ function RequestSwapButton({ myMatches, item }) {
         request: null
     });
 
-    console.log(myMatches);
-
     const clickHandler = () => {
         console.log(myMatches);
-        
+
     }
 
     return (
@@ -43,20 +40,17 @@ function RequestSwapButton({ myMatches, item }) {
             >Propose a swap</button>
             {state.showModal && (
                 <div className="overlay-wrapper">
-
                     <div className="overlay">
-
                         <button
                             onClick={() => dispatch({ type: "showModal", showModal: false, })}
                             className="overlay__btn"
                         >X</button>
                         <div className="overlay__wrapper">
-
                             <h2 >Swap With {item.user.firstname} {item.user.lastname}</h2>
                             <form className="overlay__wrapper__article">
                                 {myMatches?.map(items => (
-                                    <article 
-                                        key={items.id} 
+                                    <article
+                                        key={items.id}
                                         className="overlay__wrapper__article__my-item"
                                         onClick={clickHandler}
                                     >
@@ -75,7 +69,6 @@ function RequestSwapButton({ myMatches, item }) {
                             </form>
                         </div>
                     </div>
-
                 </div>
             )}
         </>

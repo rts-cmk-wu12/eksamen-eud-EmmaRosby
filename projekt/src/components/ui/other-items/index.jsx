@@ -5,15 +5,10 @@ async function OtherItems({ item }) {
 
     const response = await fetch(`${process.env.API_BASE_URL}/listings`);
     const listings = await response.json();
-    //console.log(listings);
-    
+
     const itemUserId = item.userId;
-    //console.log(itemUserId);
-    
+
     const matches = listings.filter(user => user.userId == itemUserId)
-    //console.log(matches);
-    
-    
 
     return (
         <>
@@ -21,7 +16,7 @@ async function OtherItems({ item }) {
             <ul className="other">
                 {matches.map(listings =>
                     <li key={listings.id}>
-                        <ListingCard listing={listings}  />
+                        <ListingCard listing={listings} />
                     </li>
                 )}
             </ul>

@@ -4,7 +4,6 @@ import { useActionState, useEffect } from "react";
 import doLogin from "./do-login";
 import { toast, ToastContainer } from "react-toastify";
 import "./login.scss";
-import { redirect } from "next/dist/server/api-utils";
 
 function LoginForm() {
 
@@ -22,9 +21,6 @@ function LoginForm() {
         
         if (!id) {
             toast.success("Welcome", {
-                onClose: function(){
-                    // redirect("/")
-                },
                 closeOnClick: false,
                 autoClose: 2000,
                 hideProgressBar: true,

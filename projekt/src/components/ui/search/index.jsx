@@ -43,17 +43,17 @@ function SearchForm() {
                     value={query}
                     onChange={e => setQuery(e.target.value)}
                     className="search-bar__container__input"
-                    
+
                 />
-                <CiSearch className="search-bar__container__icon"/>
+                <CiSearch className="search-bar__container__icon" />
             </div>
             {loading && <div className="search-bar__loading">Loading...</div>}
             {results.length > 0 && (
                 <div className="search-suggestions">
                     {results.map(listing => (
-						<Link href={`/listing/${listing.id}`} key={listing.id}>
-                        	<p key={listing.id}>{listing.title}</p>
-						</Link>
+                        <Link href={`/listing/${listing.id}`} key={listing.id}>
+                            <p key={listing.id}>{listing.title}</p>
+                        </Link>
                     ))}
                 </div>
             )}

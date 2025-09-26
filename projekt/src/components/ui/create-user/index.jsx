@@ -1,12 +1,11 @@
 "use client";
 
-import { useActionState, useState } from "react";
+import { useActionState } from "react";
 import doRegister from "./do-register";
 import "./register.scss"
 
 function CreateUserForm() {
     const [formState, formAction, isPending] = useActionState(doRegister);
-
 
     return (
         <>

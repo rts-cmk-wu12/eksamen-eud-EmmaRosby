@@ -2,8 +2,8 @@ import Link from "next/link";
 import "./header.scss";
 import { cookies } from "next/headers";
 import LogOutButton from "./logout";
-async function Header() {
 
+async function Header() {
     const cookieStore = await cookies();
     const token = cookieStore.get("id_token");
     const isLoggedIn = token;

@@ -4,15 +4,15 @@ import { IoArrowBackOutline, IoArrowForward } from "react-icons/io5";
 import ListingCard from "../listing-card";
 import "./pagination.scss"
 
-function Pagination({ listings  }) {
+function Pagination({ listings }) {
     const [currentPage, setCurrentPage] = useState(1)
-    
+
     const itemsPerPage = 6
     const totalPages = Math.ceil(listings.length / itemsPerPage);
-    const startIndex = (currentPage - 1);   
+    const startIndex = (currentPage - 1);
     const selectedListings = listings.slice(startIndex, startIndex + itemsPerPage);
-    const pages = Array.from({length: totalPages}, (_, i) => i + 1);
-    
+    const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
+
     const prev = () => {
         setCurrentPage((page) => page - 1, 1)
     }

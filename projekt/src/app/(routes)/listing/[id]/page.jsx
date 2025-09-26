@@ -11,24 +11,20 @@ async function ListingDetailPage({ params }) {
     const { id } = await params;
     const response = await fetch(`${process.env.API_BASE_URL}/listings/${id}`);
     const item = (await response.json());
-    //console.log(item);
 
     const cookieStore = await cookies();
     const token = cookieStore.get("id_token");
     const isLoggedIn = !token;
 
     const listingDate = item.asset.createdAt.slice(0, 10);
-/* ____________________________________________________________________________________ */
-if (!isLoggedIn){
-    const myResponse = await fetch(`${process.env.API_BASE_URL}/listings`);
-    const data = (await myResponse.json());    
+    /* ____________________________________________________________________________________ */
+    if (!isLoggedIn) {
+        const myResponse = await fetch(`${process.env.API_BASE_URL}/listings`);
+        const data = (await myResponse.json());
 
-    const myUserId = cookieStore.get("id_userid")
-    //console.log(myUserId.value);
-    
-    var myMatches = data.filter(user => user.userId == myUserId.value);
-    //  console.log(myMatches);
-}
+        const myUserId = cookieStore.get("id_userid")
+        var myMatches = data.filter(user => user.userId == myUserId.value);
+    }
     return (
         <>
             <Header />
@@ -48,9 +44,9 @@ if (!isLoggedIn){
                         <p>{item.description}</p>
                         <span>On SwapHun since: {listingDate}</span>
                         {isLoggedIn ? (
-                                <Link href="/login" className="item__info__request" >
-                                    <button className="item__info__login">Sign in to Swap</button>
-                                </Link>
+                            <Link href="/login" className="item__info__request" >
+                                <button className="item__info__login">Sign in to Swap</button>
+                            </Link>
                         ) : (
                             <RequestSwapButton myMatches={myMatches} item={item} />
                         )}

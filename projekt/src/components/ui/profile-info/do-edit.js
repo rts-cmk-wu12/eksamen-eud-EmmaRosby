@@ -5,14 +5,14 @@ import { cookies } from "next/headers";
 import z from "zod";
 
 async function doEdit(prevState, formData) {
-    const { id, firstname, lastname, email, password} = Object.fromEntries(formData);
+    const { id, firstname, lastname, email, password } = Object.fromEntries(formData);
 
     const schema = z.object({
         firstname: z.string().min(1, { message: "Skal udfyldes" }),
         lastname: z.string().min(1, { message: "Skal udfyldes" }),
         email: z.string().min(1, { message: "Skal udfyldes" }),
         password: z.string().min(1, { message: "Skal udfyldes" }),
-       
+
     });
 
     const validated = schema.safeParse({
